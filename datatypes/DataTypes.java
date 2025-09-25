@@ -36,7 +36,5 @@ public class DataTypes {
                 for(int i: arr){
                         System.out.print(i + " ");
                 }
-
-                //rest all are classes and interfaces ( other topics )
         }
 }
