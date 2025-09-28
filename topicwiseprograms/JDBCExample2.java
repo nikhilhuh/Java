@@ -11,7 +11,7 @@ public class JDBCExample2 {
 
                         String url = "jdbc:mysql://localhost:3306/testdb";
                         String user = "root";
-                        String password = "nikhilhuh9980";
+                        String password = "mypassword";
 
                         Connection con = DriverManager.getConnection(url, user, password);
                         System.out.println("Connection Successful");
