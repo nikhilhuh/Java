@@ -1,0 +1,20 @@
+Write a servlet program to display a welcome message using HttpServletResponse.
+
+Servlet Program (ServletExample1.java) =>
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class ServletExample1 extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        out.println("<html><body>");
+        out.println("<h2>Welcome to Java Servlets!</h2>");
+        out.println("<p>This is a simple servlet example displaying a welcome message.</p>");
+        out.println("</body></html>");
+    }
+}

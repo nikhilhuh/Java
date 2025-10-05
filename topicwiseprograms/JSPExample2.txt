@@ -1,0 +1,23 @@
+Write a JSP program that accepts user name and email from an HTML form and displays them on the next page.
+
+HTML Form (userinfo.html) ->
+<form action="displayinfo.jsp" method="post">
+  Name: <input type="text" name="uname"><br><br>
+  Email: <input type="text" name="email"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+JSP File (JSPExample2.jsp) ->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head><title>User Information</title></head>
+<body>
+    <h2>User Information</h2>
+    <%
+        String name = request.getParameter("uname");
+        String email = request.getParameter("email");
+    %>
+    <p><b>Name:</b> <%= name %></p>
+    <p><b>Email:</b> <%= email %></p>
+</body>
+</html>

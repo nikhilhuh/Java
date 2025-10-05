@@ -1,0 +1,11 @@
+Write a JSP program to display a welcome message on the webpage.
+
+Program (JSPExample1.jsp) ->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head><title>JSP EXAMPLE 1</title></head>
+<body>
+    <h2>Welcome to JSP Programming!</h2>
+    <p>This is a simple JSP example displaying a welcome message.</p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+Write a JSP program that takes two numbers and an operator from a form, performs the operation, and displays the result.
+
+HTML Form (calculator.html) ->
+<form action="calculator.jsp" method="post">
+  First Number: <input type="text" name="num1"><br><br>
+  Second Number: <input type="text" name="num2"><br><br>
+  Operation:
+  <select name="op">
+      <option value="add">Addition</option>
+      <option value="sub">Subtraction</option>
+      <option value="mul">Multiplication</option>
+      <option value="div">Division</option>
+  </select><br><br>
+  <input type="submit" value="Calculate">
+</form>
+
+JSP File (JSPExample3.jsp) ->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head><title>Simple Calculator</title></head>
+<body>
+    <h2>Simple Calculator Result</h2>
+    <%
+        try {
+            int n1 = Integer.parseInt(request.getParameter("num1"));
+            int n2 = Integer.parseInt(request.getParameter("num2"));
+            String op = request.getParameter("op");
+            int result = 0;
+
+            switch(op) {
+                case "add": result = n1 + n2; break;
+                case "sub": result = n1 - n2; break;
+                case "mul": result = n1 * n2; break;
+                case "div": result = n2 != 0 ? n1 / n2 : 0; break;
+            }
+    %>
+        <p><b>Result:</b> <%= result %></p>
+    <%
+        } catch(Exception e) {
+            out.println("<p style='color:red;'>Invalid Input!</p>");
+        }
+    %>
+</body>
+</html>
