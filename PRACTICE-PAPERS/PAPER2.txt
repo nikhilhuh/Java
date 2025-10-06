@@ -1,0 +1,295 @@
+Q 1- In what terms, Java is considered better than Ct+? Explain each point. 
+
+A 1- 
+1. Platform Independence
+Java programs are platform-independent because they run on the Java Virtual Machine (JVM).
+The same Java program can run on Windows, Linux, Mac without recompilation.
+C++ programs are platform-dependent; you need to recompile the code for each operating system.
+eg-
+System.out.println("Hello Java!");  // Runs on any OS with JVM
+
+2. Automatic Memory Management
+Java provides automatic garbage collection, so programmers don’t need to manually manage memory.
+C++ requires manual memory management using new and delete, which can lead to memory leaks or dangling pointers.
+eg-
+String s = new String("Hello"); // No need to delete 's', JVM handles memory
+
+3. Simpler Syntax and Safety
+Java is simpler and safer than C++ because it eliminates complex features like pointers, operator overloading, and multiple inheritance.
+This reduces programming errors and makes code easier to maintain.
+eg-
+int[] arr = new int[5];  // No pointer arithmetic needed
+
+4. Object-Oriented from the Start
+Java is fully object-oriented, everything (except primitive types) is part of a class.
+C++ is hybrid; it supports procedural and object-oriented programming, which can be confusing for beginners.
+
+5. Multithreading Support
+Java has built-in support for multithreading with classes like Thread and interfaces like Runnable.
+In C++, multithreading depends on external libraries and is more complex.
+eg-
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+6. Security
+Java provides built-in security features, such as runtime checking, type safety, and access modifiers.
+C++ allows direct memory access using pointers, which can lead to buffer overflows or unsafe operations.
+
+
+Q 2- What is default constructor ?
+     How is it different than constructor without parameter? 
+
+A 2-
+A default constructor is a constructor provided by the Java compiler automatically if you do not define any constructor in your class.
+It has no parameters and initializes objects with default values (0 for numbers, null for objects, false for boolean).
+eg-
+class Demo {
+    int x;
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Demo obj = new Demo();  // default constructor is called automatically
+        System.out.println(obj.x);  // prints 0
+    }
+}
+
+A constructor without parameter is one that you explicitly define in your class without any arguments.
+It is also called a no-argument constructor, but unlike the default constructor, it is written by the programmer and can contain custom initialization code.
+eg-
+class Demo {
+    int x;
+
+    // Constructor without parameter
+    Demo() {
+        x = 10;   // custom initialization
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Demo obj = new Demo();  // calls the user-defined constructor
+        System.out.println(obj.x);  // prints 10
+    }
+}
+
+Q 3- Explain partial implementation. Is it of any use ? 
+
+A 3-
+Partial implementation in Java means providing only some of the methods of a class or interface, leaving the rest to be implemented later.
+
+This is typically done using:
+Abstract Classes 
+Interfaces with default methods (Java 8+) 
+
+eg-
+abstract class Vehicle {
+    abstract void start();      // abstract method – no body
+    void fuel() {               // concrete method – partial implementation
+        System.out.println("Filling fuel...");
+    }
+}
+
+class Car extends Vehicle {
+    void start() {              // provides implementation for abstract method
+        System.out.println("Car started");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Car c = new Car();
+        c.fuel();   // inherited concrete method
+        c.start();  // implemented abstract method
+    }
+}
+
+It has several advantages:
+1- Code Reusability – Common behavior can be implemented once in the abstract class and reused by multiple subclasses.
+2- Flexibility – Subclasses are forced to implement only the abstract methods they need, while inheriting the rest.
+3- Encourages Object-Oriented Design – Allows you to define a general blueprint and let subclasses complete the details.
+4- Reduces Code Duplication – Shared code does not need to be rewritten in every subclass.
+
+Q 4- What do you understand by JSP ? 
+     What are the advantages of using JSP ?
+
+A 4-
+
+
+Q 5- What is the difference between generic and HTTP servlets ? 
+     Describe the life cycle methods of servlets ? 
+
+A 5-
+
+
+Q 6- How can you insert image in any HTML document ? 
+     Describe any 5 image attributes ? 
+
+A 6-
+
+
+Q 7- What is the difference between throw and throws keyword in Java? 
+
+A 7-
+throw ->
+Purpose: Used to actually throw an exception from a method or block of code.
+Usage: Followed by an instance of an exception.
+Scope: Can be used inside a method.
+Number of exceptions: Can throw only one exception at a time.
+eg-
+public class ThrowExample {
+    static void checkAge(int age) {
+        if (age < 18) {
+            throw new ArithmeticException("Not allowed"); // throws exception
+        } else {
+            System.out.println("Welcome!");
+        }
+    }
+
+    public static void main(String[] args) {
+        checkAge(15); // this will throw ArithmeticException
+    }
+}
+throws ->
+Purpose: Used in a method declaration to declare the exceptions a method might throw.
+Usage: Tells the caller of the method that it must handle or propagate the exception.
+Scope: Used in method signature.
+Number of exceptions: Can declare multiple exceptions separated by commas.
+eg-
+import java.io.*;
+
+public class ThrowsExample {
+    static void readFile() throws IOException { // declares potential exception
+        FileReader fr = new FileReader("file.txt"); // may throw IOException
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile(); // must handle IOException
+        } catch (IOException e) {
+            System.out.println("File not found!");
+        }
+    }
+}
+
+
+Q 8- Explain clearly the listeners and adapter classes.
+
+A 8-
+
+
+Q 9- What is a package in Java ? 
+     Which package is imported by default? 
+
+A 9-
+A package in Java is a collection of related classes, interfaces, and sub-packages grouped together under a common name.
+Packages help in:
+1- Organizing code – Makes large programs easier to manage.
+2- Avoiding name conflicts – Two classes with the same name can exist in different packages.
+3- Code reusability – You can import and reuse classes from other packages.
+
+Example of a package declaration:
+package mypackage;  // defines a package named 'mypackage'
+
+public class Demo {
+    public void show() {
+        System.out.println("Hello from mypackage!");
+    }
+}
+
+To use this class in another file:
+import mypackage.Demo;
+
+public class Test {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.show();
+    }
+}
+
+In Java, the java.lang package is automatically imported in every program.
+It contains fundamental classes like String, Math, System, Object, Integer, etc.
+eg-
+public class Test {
+    public static void main(String[] args) {
+        String s = "Hello";   // java.lang.String is available by default
+        System.out.println(s); // java.lang.System is available by default
+    }
+}
+No need to write import java.lang.String; or import java.lang.System; — it’s imported automatically.
+
+
+Q 10- Explain different types of controls in details that AWT supports.
+
+A 10-
+
+
+Q 11- Write a java proagrams that takes an integer as input and divide it by 1 less than the 
+      inputted number (for example if you enter 10, it divides 10 by 9) and print the resultant in words upto two
+      digits after decimal. In case the inputted number is 1, it throws appropriate exception. 
+
+A 11-
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Main {
+        public void divide(int x) {
+                double result  = (double) x / (x - 1);
+                DecimalFormat df = new DecimalFormat("#.##");
+                System.out.println("Result is: " + df.format(result));
+        }
+        public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                System.out.print("Enter the number: ");
+                int n = sc.nextInt();
+                try{
+                        if (n == 1) {
+                                throw new ArithmeticException("Cannot divide by zero");
+                        }
+                        Main obj = new Main(); 
+                        obj.divide(n);
+                } catch (ArithmeticException e) {
+                        System.out.println("Exception: " + e.getMessage());
+                }
+                sc.close();
+        }
+}
+
+Q 12- What are different types of JDBC drivers ? 
+      What is the use of Driver Manager class ? 
+      Explain by giving example
+
+A 12-
+
+
+Q 13- What is session tracking ? 
+      How is it preformed and what are its benefits? 
+
+A 13-
+
+
+Q 14- What are different JSP elements ? 
+      Explain each in details.
+
+A 14-
+
+
+Q 15- Describe any 6 methods of HTTP servlet along with their usages. 
+
+A 15- 
+
+
+Q 16- What do you understand by custom Tag Libraries and JSP standard Tag Libraries ? 
+      What is their importance ? 
+      Explain in detail.
+
+A 16-
+
+
+Q 17- Write a servlet program that returns you the square ofinputed number as response. 
+
+A 17-
+

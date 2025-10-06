@@ -1,0 +1,407 @@
+Q 1- What do you mean by Bitwise Operators ? 
+     What types of Bitwise operators are available in Java ?
+     Explain in short.
+
+A 1- 
+Definition:
+Bitwise operators are special operators in Java that perform operations on individual bits of integer data types (byte, short, int, long).
+They are mostly used in low-level programming, encryption, graphics, or performance optimization, where direct manipulation of bits is needed.
+
+Bitwise Operators in Java
+
+1- & (Bitwise AND) – Performs an AND operation on each pair of bits.
+The result bit is 1 only if both bits are 1.
+Example: 5 & 3 → 0101 & 0011 = 0001 → 1
+
+2- | (Bitwise OR) – Performs an OR operation on each pair of bits.
+The result bit is 1 if any one of the bits is 1.
+Example: 5 | 3 → 0101 | 0011 = 0111 → 7
+
+3- ^ (Bitwise XOR) – Performs an exclusive OR.
+The result bit is 1 if the bits are different.
+Example: 5 ^ 3 → 0101 ^ 0011 = 0110 → 6
+
+4- ~ (Bitwise NOT) – Inverts all bits (0 becomes 1, and 1 becomes 0).
+It also changes the sign of the integer.
+Example: ~5 → ~(0101) = 1010 → -6
+
+5- << (Left Shift) – Shifts bits to the left and fills 0s on the right.
+Each left shift multiplies the number by 2.
+Example: 5 << 1 → 0101 → 1010 → 10
+
+6- >> (Right Shift – Signed) – Shifts bits to the right while keeping the sign bit (most significant bit).
+Each shift divides the number by 2.
+Example: 10 >> 1 → 1010 → 0101 → 5
+
+7- >>> (Unsigned Right Shift) – Shifts bits to the right and fills the leftmost bits with 0s.
+It does not preserve the sign bit (used for unsigned numbers).
+Example: -10 >>> 1 → gives a large positive number
+
+In Short:
+Bitwise operators work bit by bit on integers.
+They are used for masking, bit testing, encryption, and performance optimizations.
+Each operator performs a specific operation such as AND, OR, NOT, XOR, or bit shifting.
+
+
+Q 2- What is the difference between Actual argument and Formal argument?
+
+A 2-
+Actual Arguments ->
+Actual Arguments are the values or variables that you pass to a method when you call it. 
+They provide the actual data that the method will use. 
+These exist only at the time of the method call.
+
+Formal Arguments ->
+Formal Arguments are the variables declared in the method definition that receive the values from the actual arguments. They exist only while the method is executing and are used inside the method to perform operations.
+
+For example ->
+class Example {
+    void display(int a, int b) {   // a and b are formal arguments
+        System.out.println(a + b);
+    }
+
+    public static void main(String[] args) {
+        Example obj = new Example();
+        obj.display(10, 20);       // 10 and 20 are actual arguments
+    }
+}
+
+In short, the actual arguments send the values, and the formal arguments receive them inside the method.
+
+
+Q 3- What is the difference between an abstract class and an interface ? 
+
+A 3-
+Abstract Class ->
+An abstract class in Java is a class that can have both abstract methods (without a body) 
+and non-abstract methods (with a body). 
+It can also have instance variables, constructors, and concrete methods. 
+An abstract class is used when you want to provide a common base or partial implementation that other classes can extend. It is declared using the abstract keyword and can use extends for inheritance.
+
+Interface ->
+An interface, on the other hand, is a completely abstract type that contains only abstract methods (until Java 7), but from Java 8 onwards, it can also have default and static methods. 
+An interface is used to define a contract or blueprint that other classes must follow. 
+A class implements an interface using the implements keyword, and multiple interfaces can be implemented by a single class, supporting multiple inheritance.
+
+For example ->
+abstract class Animal {
+    abstract void sound();        // abstract method
+    void eat() {                  // concrete method
+        System.out.println("Eating...");
+    }
+}
+
+interface Pet {
+    void play();                  // abstract method by default
+}
+
+class Dog extends Animal implements Pet {
+    void sound() {
+        System.out.println("Barks");
+    }
+
+    public void play() {
+        System.out.println("Plays with owner");
+    }
+}
+
+In short:
+We use an abstract class when classes share common code or behavior.
+We use an interface when classes should follow the same rules or capabilities but may have completely different implementations.
+
+
+Q 4- What do you understand by events in Java ? Why are the events important ? 
+
+A 4-
+
+
+Q 5- What are various lists used in HTML ? Describe in short. 
+
+A 5- 
+
+
+Q 6- What are servlets ? How are servlets different from simple Java application ? 
+
+A 6-
+
+
+Q 7- What do you mean by Session tracking ? How is it performed and what are its benefits ?
+
+A 7- 
+
+
+Q 8- What are various tag libraries ? Why are they used ? 
+
+A 8-
+
+
+Q 9- Why the very first request for a JSP page experience a delay in response ? 
+     How this delay is removed ?
+
+A 9-    
+
+
+Q 10- What do you understand by threads ? 
+      What benefits do threads provide ? 
+      What are the different ways of creating them ? 
+      Also describe synchronization.. 
+
+A 10- 
+A thread in Java is a lightweight subprocess or a smallest unit of execution within a program.
+It allows a program to perform multiple tasks simultaneously, also known as multitasking or multithreading.
+
+For example, in a text editor, one thread might handle typing, another thread might handle auto-saving, and another might handle spell-check — all happening at the same time.
+
+Benefits of Using Threads ->
+1- Better performance – Multiple threads can run in parallel, improving program efficiency.
+2- Efficient use of CPU – Threads keep the processor busy by performing multiple tasks simultaneously.
+3- Simplifies complex tasks – Large problems can be divided into smaller, parallel tasks.
+4- Asynchronous behavior – Threads allow background operations (like file download, network calls) without blocking the main program.
+5- Improved responsiveness – Especially useful in GUI applications where the interface remains active even while heavy tasks are running in the background.
+
+Ways to create Threads ->
+There are mainly two wasy to create threads -
+
+1- By extending the Thread Class
+eg-
+class MyThread extends Thread {
+        public void run() { // run() method contains the code to execute
+                System.out.println("Thread is running..");
+        }
+}
+public class Example1 {
+        public static void main(String[] args) {
+                MyThread t1 = new MyThread();
+                t1.start(); // starts the thread and calls run()
+        }
+}
+
+2- By implementing the Runnable interface
+eg-
+class MyRunnable implements Runnable {
+        public void run() {
+                System.out.println("Thread is running..");
+        }
+}
+public class Example2 {
+        public static void main(String[] args) {
+                Thread t1 = new Thread(new MyRunnable());
+                t1.start();
+        }
+}
+
+The second method (implementing Runnable) is preferred in professional code because it allows a class to extend another class while still using threads.
+
+Synchronization ->
+When multiple threads access a shared resource (like a variable, object, or file) at the same time, there is a risk of data inconsistency or corruption.
+Synchronization ensures that only one thread at a time can access the shared resource, keeping data safe and consistent.
+
+In Java, synchronization is achieved using the synchronized keyword.
+eg-
+class Counter {
+        int count = 0;
+
+        synchronized void increment() {
+                count++;
+        }
+}
+public class Example {
+        public static void main(String[] args) throws Exception {
+                Counter c = new Counter();
+
+                Thread t1 = new Thread(() -> {
+                        for(int i=0;i<1000;i++) c.increment();
+                });
+                Thread t2 = new Thread(() -> {
+                        for(int i = 0; i < 1000; i++) c.increment();
+                });
+
+                t1.start();
+                t2.start();
+                t1.join();
+                t2.join();
+
+                System.out.println("Count: " + c.count); // safely prints 2000
+        }
+}
+Here, synchronized ensures that both threads don’t update count at the same time.
+
+In short:
+A thread is a lightweight process that runs independently.
+Threads improve performance and responsiveness by enabling parallel execution.
+They can be created by extending Thread or implementing Runnable.
+Synchronization prevents conflicts when threads share resources, ensuring data consistency.
+
+
+Q 11- Differentiate between the following:
+      (a) Checked Exception and Unchecked Exception
+      (b) Error and Exception
+      (c) Throws and Throw
+      (d) Finally and Finalize()
+
+A 11-
+(a) Checked Exception and Unchecked Exception
+
+Checked Exceptions are the exceptions that are checked at compile time.
+This means the compiler forces you to handle them using a try-catch block or by declaring them with the throws keyword.
+Examples include IOException, SQLException, and FileNotFoundException.
+They usually occur due to external factors like file handling or network access, which are beyond the program’s control.
+eg-
+import java.io.*;
+
+public class CheckedExample {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("file.txt"); // may throw IOException
+        } catch (IOException e) {
+            System.out.println("File not found!");
+        }
+    }
+}
+
+Unchecked Exceptions, on the other hand, are not checked at compile time but occur at runtime.
+They usually happen because of programming mistakes such as logical or arithmetic errors.
+Examples include NullPointerException, ArrayIndexOutOfBoundsException, and ArithmeticException.
+eg-
+public class UncheckedExample {
+    public static void main(String[] args) {
+        int a = 10, b = 0;
+        System.out.println(a / b);  // throws ArithmeticException at runtime
+    }
+}
+
+(b) Error and Exception
+
+An Error in Java represents a serious issue that occurs in the Java Virtual Machine (JVM) and is beyond the control of the programmer.
+Errors are usually not meant to be handled by the program because they indicate problems like system failure or memory exhaustion.
+Examples include OutOfMemoryError, StackOverflowError, and VirtualMachineError.
+eg-
+public class ErrorExample {
+    public static void main(String[] args) {
+        // This may throw StackOverflowError
+        main(args);  // recursive call with no exit
+    }
+}
+
+An Exception is an event that occurs during program execution and can be handled by the programmer using exception-handling mechanisms like try, catch, and finally.
+Exceptions usually occur due to invalid user input, failed I/O operations, or arithmetic errors, and the program can recover from them.
+eg-
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {1, 2, 3};
+            System.out.println(arr[5]);  // ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Index out of bounds!");
+        }
+    }
+}
+
+(c) Throws and Throw
+
+The throw keyword is used to manually throw an exception from a block of code.
+It is followed by an instance of an exception object.
+eg-
+public class ThrowExample {
+    static void check(int age) {
+        if (age < 18) {
+            throw new ArithmeticException("Not allowed");
+        } else {
+            System.out.println("Welcome!");
+        }
+    }
+
+    public static void main(String[] args) {
+        check(15);  // throws exception here
+    }
+}
+
+The throws keyword is used in a method declaration to specify the list of exceptions that a method might throw.
+It tells the caller that they must handle or declare these exceptions.
+eg-
+import java.io.*;
+
+public class ThrowsExample {
+    static void readFile() throws IOException {
+        FileReader fr = new FileReader("file.txt"); // may throw IOException
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile();
+        } catch (IOException e) {
+            System.out.println("File not found!");
+        }
+    }
+}
+
+In short, throw actually throws an exception, while throws declares potential exceptions.
+
+(d) Finally and Finalize()
+
+The finally block in Java is used with a try-catch block and always executes whether an exception occurs or not.
+It is mainly used for resource cleanup, such as closing files, releasing connections, or freeing memory.
+eg-
+public class FinallyExample {
+    public static void main(String[] args) {
+        try {
+            int data = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught");
+        } finally {
+            System.out.println("Finally block executed");
+        }
+    }
+}
+
+The finalize() method, on the other hand, is a method of the Object class that is called by the Garbage Collector before an object is destroyed.
+It is used to perform cleanup operations before the object is reclaimed by memory management.
+However, it is deprecated in newer Java versions because it’s unpredictable when (or if) it will be called.
+eg-
+class Demo {
+    protected void finalize() {
+        System.out.println("Object is garbage collected");
+    }
+}
+
+public class FinalizeExample {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d = null;  // eligible for garbage collection
+        System.gc(); // request garbage collection
+        System.out.println("End of main");
+    }
+}
+
+
+Q 12- What are the rain steps to make JDBC connectivity ?
+      Why statement is used in JDBC ? 
+      What are the different types of statemnent ? 
+
+A 12-
+
+
+Q 13-  Write a Java applet program to create national flag. Also colour it appropriately
+
+A 13-
+
+
+Q 14- Write a program in Java Servlet, which greets you by your name you (first it takes your name and greets you).
+
+A 14-
+
+
+Q 15- What are the different methods used in Servlets? Explain their usages.
+
+A 15-
+
+
+Q 16- Write a program in JSP to calculate the sum of numbers from 1 to 25. 
+
+A 16-
+
+
+Q 17- (a) Explain in detail, how input and output are processed in JSP.
+      (b) What are the advantages of using JSP over ServtetS and vice-versa ? 
+
+A 17-
