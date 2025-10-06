@@ -2,7 +2,7 @@
 
 package topicwiseprograms;
 
-public class ExceptionHandlingExample {
+public class ExceptionHandling {
         public static void main(String[] args) {
                 int a = 10, b =0;
                 try {
@@ -17,3 +17,7 @@ public class ExceptionHandlingExample {
                 }
         }
 }
+
+// Output ->
+// Error: Division by zero is not allowed.
+// Execution completed.

@@ -32,3 +32,8 @@ public class SortingArray {
 
         }
 }
+
+// Input ->
+// java topicwiseprograms.SortingArray 1 4 2 5 3 6  7 23 12
+// Output ->
+// 1 2 3 4 5 6 7 12 23 

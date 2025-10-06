@@ -28,7 +28,7 @@ class  CookingJob implements Runnable {
 
 }
 
-public class MultiThreadingExample {
+public class MultiThreading {
         public static void main(String[] args) {
                 Thread task = new CookingTask("Pasta");
                 Thread job = new Thread(new CookingJob("Washing Dishes"));
@@ -37,3 +37,7 @@ public class MultiThreadingExample {
                 job.start();
         }
 }
+
+// Output ->
+// Pasta is being prepared by Thread-0
+// Washing Dishes is being processed by Thread-1

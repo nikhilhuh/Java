@@ -4,7 +4,7 @@ package topicwiseprograms;
 
 import java.sql.*;
 
-public class JDBCExample2 {
+public class JDBC2 {
         public static void main(String[] args) {
                 try {
                         Class.forName("com.mysql.cj.jdbc.Driver");

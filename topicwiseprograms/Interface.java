@@ -32,7 +32,7 @@ class Bike implements Vehicle {
         }
 }
 
-public class InterfaceExample {
+public class Interface {
         public static void main(String[] args){
                 Car car = new Car();
                 Bike bike = new Bike();
@@ -43,3 +43,9 @@ public class InterfaceExample {
                 bike.stop();
         } 
 }
+
+// Output ->
+// Car started
+// Bike started
+// Car stopped
+// Bike stopped

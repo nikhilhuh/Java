@@ -71,3 +71,25 @@ public class OOPConcept {
                 sc.close();
         }
 }
+
+// Output ->
+// Enter account holder name: Nikhil Tiwari
+// Welcome Nikhil Tiwari to the bank. How can we help you? 
+// 1- Deposit
+// 2- Withdraw
+// 3- Nothing, exit
+// 1
+// Enter amount to deposit: 12342
+// You current balance is: 12342.0
+// Welcome Nikhil Tiwari to the bank. How can we help you?
+// 1- Deposit
+// 2- Withdraw
+// 3- Nothing, exit
+// 2
+// Enter amount to withdraw: 34
+// You current balance is: 12308.0
+// Welcome Nikhil Tiwari to the bank. How can we help you?
+// 1- Deposit
+// 2- Withdraw
+// 3- Nothing, exit
+// 3

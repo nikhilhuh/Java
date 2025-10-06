@@ -29,3 +29,16 @@ public class VectorExample {
                 System.out.println("Capacity: " + v.capacity());
         }
 }
+
+// Output ->
+// 1
+// 2
+// 3
+// 4
+// 5
+// Size: 5
+// Capacity: 5
+// Size: 6
+// Capacity: 10
+// Size: 5
+// Capacity: 10

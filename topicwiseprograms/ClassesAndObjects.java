@@ -27,3 +27,11 @@ public class ClassesAndObjects {
                 student2.displayDetails();
         }
 }
+
+// Output ->
+// Name: Nikhil
+// Roll: 86
+// Marks: 85.0
+// Name: Nitesh
+// Roll: 92
+// Marks: 81.0

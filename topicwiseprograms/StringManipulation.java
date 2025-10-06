@@ -27,3 +27,8 @@ public class StringManipulation {
                 sc.close();
         }
 }
+
+// Output ->
+// Enter a string: Hi this is counting vowels and consonants.
+// Vowels: 12
+// Consonants: 23

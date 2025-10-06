@@ -15,9 +15,12 @@ class Dog extends Animal {
         }
 }
 
-public class InheritanceExample {
+public class Inheritance {
         public static void main(String[] args) {
                 Dog dog = new Dog();
                 dog.sound();
         }
 }
+
+// Output ->
+// Dog barks

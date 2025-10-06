@@ -20,3 +20,7 @@ public class PalindromeCheck {
                 sc.close();
         }
 }
+
+// Output ->
+// Enter a string: Hello
+// The string is not a palindrome.

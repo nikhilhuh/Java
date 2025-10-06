@@ -42,3 +42,7 @@ public class AbstractionExample {
                 System.out.println("Area of Rectangle with width 100 and height 50: " + rectangle.area());
         }
 }
+
+// Output ->
+// Area of Circle with radius 100: 31400.0
+// Area of Rectangle with width 100 and height 50: 5000.0

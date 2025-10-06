@@ -4,7 +4,7 @@ package topicwiseprograms;
 
 import java.util.Scanner;
 
-public class MatrixOperation {
+public class Matrix {
         public static void add(int a[][], int b[][]) {
                 int sum[][] = new int[3][3];
                 System.out.println("Sum of two matrices is:");
@@ -67,3 +67,32 @@ public class MatrixOperation {
                 sc.close();
         }
 }
+
+// Output ->
+// Enter the elements of First 3 x 3 matrix: 
+// 1 2 3 4 5 6 7 8 9
+// Enter the elements of Second 3 x 3 matrix: 
+// 1 2 3 4 5 6 7 8 9
+// Enter your choice:
+// 1- Addtion of two matrices
+// 2- Multiplication of two matrices
+// 3- Exit
+// 1
+// Sum of two matrices is:
+// 2 4 6
+// 8 10 12
+// 14 16 18
+// Enter your choice:
+// 1- Addtion of two matrices
+// 2- Multiplication of two matrices
+// 3- Exit
+// 2
+// 30 36 42 
+// 66 81 96
+// 102 126 150
+// Enter your choice:
+// 1- Addtion of two matrices
+// 2- Multiplication of two matrices
+// 3- Exit
+// 3
+// Exiting..
